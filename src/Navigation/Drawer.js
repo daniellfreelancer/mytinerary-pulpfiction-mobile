@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import React from 'react'
-import Hero from './Hero'
-import Cities from './Cities'
+import Hero from '../components/Hero'
+import Cities from '../components/Cities'
 
 const DrawerNav = createDrawerNavigator()
 
@@ -16,3 +16,7 @@ export default function Drawer() {
     </DrawerNav.Navigator>
   )
 }
+
+const styles = StyleSheet.create({
+
+})

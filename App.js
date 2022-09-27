@@ -1,17 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-
+import 'react-native-gesture-handler'
+import React from 'react';
 import Hero from './src/components/Hero';
+import { View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Drawer from './src/components/Drawer';
 
 
 export default function App() {
 
   return (
-    <>
-        <Hero/>
-        
-    </>
+    <NavigationContainer>
+        <Drawer/>
+    </NavigationContainer>
   );
 }

@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler'
 import { View, Text, ImageBackground, Image, Button, StyleSheet } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';

@@ -2,7 +2,7 @@ import 'react-native-gesture-handler'
 import { View, ImageBackground, Image, Button, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-
+import Carousel from './Carousel';
 
 export default function Hero({ navigation }) {
     const imgBack = { uri: "https://th.bing.com/th/id/R.961925371291f3512aeac8aaedb6fc40?rik=cCqbFXwxpqCcvA&riu=http%3a%2f%2fwallpapershome.com%2fimages%2fpages%2fpic_v%2f660.jpg&ehk=6NbNZMXb4CkpW8%2f20M1%2bXi8898xTJEBy6wc4D3b%2f1xE%3d&risl=&pid=ImgRaw&r=0" }
@@ -22,9 +22,9 @@ export default function Hero({ navigation }) {
                         onPress={() => navigation.navigate('Cities')}
                     />
                 </View>
-                <ScrollView>
 
-                </ScrollView>
+                <Carousel/>
+
                 <StatusBar style='auto' />
             </ImageBackground>
         </>

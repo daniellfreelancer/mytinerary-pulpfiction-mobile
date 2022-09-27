@@ -2,7 +2,6 @@ import 'react-native-gesture-handler'
 import { View, ImageBackground, Image, Button, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import Carousel from './Carousel';
 
 export default function Hero({ navigation }) {
@@ -23,9 +22,9 @@ export default function Hero({ navigation }) {
                         onPress={() => navigation.navigate('Cities')}
                     />
                 </View>
-                <ScrollView>
+
                 <Carousel/>
-                </ScrollView>
+
                 <StatusBar style='auto' />
             </ImageBackground>
         </>

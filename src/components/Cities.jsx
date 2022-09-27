@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, Button, StatusBar } from "react-native";
 import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useGetAllCitiesQuery } from "../features/citiesAPI";
 import { FlatList } from "react-native-gesture-handler";
 import CityCard from "./CityCard";

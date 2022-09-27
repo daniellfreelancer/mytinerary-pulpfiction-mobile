@@ -1,28 +1,32 @@
 import 'react-native-gesture-handler'
-import { View, Text, ImageBackground, Image, Button, StyleSheet } from 'react-native'
+import { View, ImageBackground, Image, Button, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function Hero() {
-    const logo = { uri: "https://raw.githubusercontent.com/daniellfreelancer/citiesCloudImg/main/logoPulp.png" }
+export default function Hero({ navigation }) {
     const imgBack = { uri: "https://th.bing.com/th/id/R.961925371291f3512aeac8aaedb6fc40?rik=cCqbFXwxpqCcvA&riu=http%3a%2f%2fwallpapershome.com%2fimages%2fpages%2fpic_v%2f660.jpg&ehk=6NbNZMXb4CkpW8%2f20M1%2bXi8898xTJEBy6wc4D3b%2f1xE%3d&risl=&pid=ImgRaw&r=0" }
     return (
         <SafeAreaView style={styles.container}>
+
             <ImageBackground source={imgBack} resizeMode="cover" style={styles.image} >
 
                 <Image source={{
-                    uri: "https://raw.githubusercontent.com/daniellfreelancer/citiesCloudImg/main/logoPulp.png",
+                    uri: "https://i.im.ge/2022/09/27/1yY0qS.pulpLogoMOBILE.png",
                 }} style={styles.logo} resizeMode="contain" />
 
                 <View style={styles.fixToText}>
                     <Button
                         title="Enter"
-                        color="indigo"
+                        color="mediumaquamarine"
+                        onPress={() => navigation.navigate('Cities')}
                     />
                 </View>
+                <ScrollView>
+
+                </ScrollView>
             </ImageBackground>
-            <StatusBar style='auto'/>
+            <StatusBar style='auto' />
         </SafeAreaView>
     )
 }
@@ -30,7 +34,7 @@ export default function Hero() {
 const styles = StyleSheet.create({
     container: {
         height: "100%",
-      },
+    },
 
     image: {
         flex: 1,
@@ -40,13 +44,16 @@ const styles = StyleSheet.create({
         height: "100%"
     },
     logo: {
-        width: "100%",
+        width: "70%",
         height: 250,
-        backgroundColor: "black",
+        marginTop: 0
     },
     fixToText: {
-        flexDirection: 'row',
+
+        flexDirection: 'column',
         justifyContent: 'space-between',
-        margin: 15
+        width: "40%",
+        color: "black"
+
     }
 });

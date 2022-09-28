@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, Button, StatusBar } from "react-native";
+import { View, Text, Button } from "react-native";
 import React, { useState } from "react";
 import { useGetAllCitiesQuery } from "../features/citiesAPI";
-import { FlatList } from "react-native-gesture-handler";
 import CityCard from "./CityCard";
+import CityNotFound from "./CityNotFound";
+import SearchInput from "./SearchInput";
 
 export default function Cities({ navigation }) {
 
@@ -10,58 +11,61 @@ export default function Cities({ navigation }) {
   const { data: cities } = useGetAllCitiesQuery(mySearch);
 
   const myCities = cities?.response;
-  
+
   return (
-    <>
-      <View style={styles.containerCity}>
-        <View>
-        <Text style={styles.title}>Cities</Text>
-        </View>
-        
-        <FlatList
-        data={myCities}
-        numCollumns={2}
-        showVerticalScrollIndicator={false}
-        keyExtractor={(city) => city._id}
-        renderItem={({item}) => <CityCard name={item.city} photo={item.photo} info={item.smalldescription}/>}
+
+    <View
+      style={{
+        flex: 1,
+        width: "100%",
+        backgroundColor: 'mediumpurple'
+      }}
+      contentContainerStyle={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
+      }}
+      decelerationRate={0}
+    >
+      <Text style={{
+        fontSize: 32,
+        textAlign: 'center',
+        padding: 10,
+        textShadowColor: 'indigo'
+      }}>
+        Cities
+      </Text>
+      <SearchInput
+        value={mySearch}
+        onChangeText={(mySearch) => setMySearch(mySearch)}
+
       />
-      <View style={styles.buttonCities}>
-      <Button
+      {
+        myCities?.length === 0 ? <CityNotFound /> : null
+      }
+      {
+        myCities?.map((item) =>
+          <CityCard
+            key={item._id}
+            name={item.city}
+            photo={item.photo}
+            info={item.smalldescription}
+            id={item._id}
+          />)
+      }
+
+      <View style={{
+        margin: 10
+      }}>
+        <Button
           title="Go Home"
           color="mediumaquamarine"
           onPress={() => navigation.navigate("Home")}
-          
+
         />
       </View>
 
-      </View>
-    </>
+    </View>
+
   );
 }
-
-const styles = StyleSheet.create({
-  containerCity: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-    backgroundColor: 'mediumpurple'
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-    textAlign: 'center',
-    padding: 10,
-    textShadowColor: 'indigo'
-
-  },
-  buttonCities:{
-    margin:10
-  }
-});

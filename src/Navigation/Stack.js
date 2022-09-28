@@ -1,12 +1,9 @@
-import { StyleSheet } from 'react-native'
 import React from 'react'
 import Hero from '../components/Hero'
 import Cities from '../components/Cities'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
 const StackNavigator = createNativeStackNavigator()
-
 
 export default function Stack() {
   return (
@@ -18,7 +15,3 @@ export default function Stack() {
     </StackNavigator.Navigator>
   )
 }
-
-const styles = StyleSheet.create({
-
-})

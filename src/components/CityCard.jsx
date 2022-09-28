@@ -1,7 +1,7 @@
 import { View, Text, Image, Button } from 'react-native'
 import React from 'react'
 
-export default function CityCard(props) {
+export default function CityCard(props,{ navigation }) {
 
   return (
     <View style={{
@@ -39,6 +39,8 @@ export default function CityCard(props) {
       <Button
         title="Discover"
         color="indigo"
+
+
       />
     </View>
   )

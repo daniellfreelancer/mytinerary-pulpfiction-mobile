@@ -3,11 +3,11 @@ import React from 'react'
 import Cities from '../components/Cities'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function CitiesScreen() {
+export default function CitiesScreen({navigation} ) {
   return (
 
       <ScrollView>
-        <Cities />
+        <Cities navigation={navigation} />
       </ScrollView>
 
   )

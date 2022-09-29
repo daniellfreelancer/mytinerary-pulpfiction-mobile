@@ -14,7 +14,7 @@ import itineraryAPI from "./src/features/itineraryAPI";
         [userAPI.reducerPath]: userAPI.reducer,
         [itineraryAPI.reducerPath]: itineraryAPI.reducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userAPI.middleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userAPI.middleware,citiesAPI.middleware,itineraryAPI.middleware ),
 
 
 

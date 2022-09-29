@@ -50,7 +50,7 @@ export default function SignUp({navigation}) {
             Alert.alert("Success")
 
 
-            redirect()
+
           }
         })
         .catch((error) => {

@@ -27,7 +27,8 @@ export default function Cities({ navigation }) {
       }}
       decelerationRate={0}
     >
-      <Text style={{
+      <Text 
+      style={{
         fontSize: 32,
         textAlign: 'center',
         padding: 10,
@@ -51,6 +52,7 @@ export default function Cities({ navigation }) {
             photo={item.photo}
             info={item.smalldescription}
             id={item._id}
+            navigation={navigation}
           />)
       }
 

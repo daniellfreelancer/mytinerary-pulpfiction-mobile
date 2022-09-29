@@ -28,6 +28,7 @@ export default function SignUp({navigation}) {
     
 
     const [onBlurInput, setOnBlurInput] = useState(false)
+
     function redirect(){
         navigation.navigate("SignIn")
       }
@@ -39,14 +40,14 @@ export default function SignUp({navigation}) {
           if (res.error) {
             let dataError = res.error;
             let dataMessage = dataError.data;
-            Alert.alert(dataMessage)
+            Alert.alert("Error ")
   
           } else {
   
             let dataResponse = res.data;
             let dataSuccess = dataResponse.message;
   
-            Alert.alert(dataSuccess)
+            Alert.alert("Success")
 
 
             redirect()

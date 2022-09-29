@@ -29,7 +29,10 @@ export default function SignIn({navigation}) {
   const [onBlurInput, setOnBlurInput] = useState(false)
 
   function redirect(){
-    navigation.navigate("MyAccount")
+    setTimeout(()=>{
+      navigation.navigate("MyAccount")
+  },2000)
+    
   }
 
 

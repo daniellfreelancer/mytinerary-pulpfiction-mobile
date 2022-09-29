@@ -46,15 +46,11 @@ export default function Profile({ navigation }) {
                 // value previously stored
                 setUserRender(JSON.parse(value))
                 setMyUser(userLogged)
-                console.log('Line 53')
-                console.log(userRender)
+
 
             } else {
 
  
- 
-                console.log('Line 59')
-                console.log(userRender)
             }
             
             setMyUser(userLogged)
@@ -90,7 +86,7 @@ export default function Profile({ navigation }) {
 
                 //setUserRender(null)
                 dispatch(setUserLogout())
-                console.log('Done.')
+
                 setTimeout(()=>{
                     navigation.navigate('Home')
                 },2000)

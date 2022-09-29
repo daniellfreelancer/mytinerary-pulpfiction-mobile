@@ -2,10 +2,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import CityDetailCard from '../components/CityDetailCard'
 
-export default function CityDetails() {
+export default function CityDetails({navigation,route}) {
   return (
-    <View>
-      <CityDetailCard/>
-    </View>
+      <CityDetailCard navigation={navigation} route={route}/>
   )
 }

@@ -3,6 +3,7 @@
 import citiesAPI from "./src/features/citiesAPI";
 import userAPI from "./src/features/userAPI";
 import authReducer from "./src/features/userAuth";
+import itineraryAPI from "./src/features/itineraryAPI";
 
  const store = configureStore({
     // reducer: mainReducer,
@@ -11,6 +12,7 @@ import authReducer from "./src/features/userAuth";
         auth: authReducer,
         [citiesAPI.reducerPath]: citiesAPI.reducer,
         [userAPI.reducerPath]: userAPI.reducer,
+        [itineraryAPI.reducerPath]: itineraryAPI.reducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userAPI.middleware),
 
